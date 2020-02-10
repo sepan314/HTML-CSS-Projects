@@ -1,0 +1,5 @@
+/* styling for lists */
+	
+ol { list-style-type: upper-roman; color: magenta; font-style: italic; }
+
+ul { list-style-type: square; color: orange; font-style: italic; }

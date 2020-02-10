@@ -1,0 +1,12 @@
+
+p {
+	color: mediumturquoise;
+	background: mistyrose;
+	font-style: italic;
+	text-align: center;
+}
+
+.textSize {
+	font-size: 50px;
+	text-shadow: 2px 2px gray;
+}
