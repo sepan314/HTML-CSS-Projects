@@ -3,6 +3,7 @@
     <head>
         <title> Welcome! </title>
         <link rel="stylesheet" type="text/css" href="./css/one_page_website.css">
+        
     </head>
     <body>
         <!-- Page title -->
@@ -18,44 +19,100 @@
         <!-- Main body -->
         <section>
             <div>
-                <p>Welcome to my blog. Here is a collection of photos and videos from my travels. </p>
+                <h2>Welcome to my blog. Here is a collection of photos and videos from my travels. </h2>
             </div>
-            <div>
+            <div id="gallery" class="row">
                 <!-- Photos and videos -->
-                <h2 id="gallery">Gallery</h2>
+                <!-- <h2 id="gallery">Gallery</h2> -->
 
-                <div>
+                <div class="column">
                     <!-- Pic 1 -->
-                    <h3>San Francisco, USA</h3>
-                    <img src="media/sf.jpeg" alt="Pic of Golden Gate Bridge and the Bay" width="320" height="240">
+                    <!-- <h3>San Francisco, USA</h3> -->
+                    <img src="media/sf.jpeg" onclick="openModal();currentSlide(1)" alt="Pic of Golden Gate Bridge and the Bay" width="240" height="180" class="hover-shadow">
+                    <!-- <div class="centered">Sunny California</div> -->
                 </div>
 
-                <div>
+                <div class="column">
                     <!-- Pic 2 -->
-                    <h3>British Columbia, Canada</h3>
-                    <img src="media/bc.jpeg" alt="Mountains in BC, Canada" width="320" height="240">
+                    <!-- <h3>British Columbia, Canada</h3> -->
+                    <img src="media/bc.jpeg" onclick="openModal();currentSlide(2)" alt="Mountains in BC, Canada" width="240" height="180" class="hover-shadow">
                 </div>
 
-                <div>
+                <div class="column">
                     <!-- Pic 3 -->
-                    <h3>Seattle, USA</h3>
-                    <img src="media/seattle.jpeg" alt="Space Needle in Seattle, USA" width="320" height="240">
+                    <!-- <h3>Seattle, USA</h3> -->
+                    <img src="media/seattle.jpeg" onclick="openModal();currentSlide(3)" alt="Space Needle in Seattle, USA" width="240" height="180" class="hover-shadow">
                 </div>
 
-                <div>
+                <div class="column">
                     <!-- Pic 4 -->
-                    <h3>Taipei, Taiwan</h3>
-                    <img src="media/taipei.jpeg" alt="Taipei 101 in Taiwan" width="320" height="240">
+                    <!-- <h3>Taipei, Taiwan</h3> -->
+                    <img src="media/taipei.jpeg" onclick="openModal();currentSlide(4)" alt="Taipei 101 in Taiwan" width="240" height="180" class="hover-shadow">
                 </div>
 
-                <div>
-                    <!-- Video 1 -->
+                <!-- <div> Video 1
+                    
                     <h3>New York City, USA</h3>
-                    <video width="320" height="240" controls>
+                    <video class="center" width="320" height="240" controls>
                         <source src="media/nyc.mov" type="video/mp4">
                         <source src="media/nyc.ogg" type="video/ogg">
                       Your browser does not support the video tag.
                     </video>
+                </div> -->
+            </div>
+
+            <!-- The Modal/Lightbox -->
+            <div id="myModal" class="modal">
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+            
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 4</div>
+                        <img src="media/sf.jpeg" style="width:100%">
+                    </div>
+                
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 4</div>
+                        <img src="media/bc.jpeg" style="width:100%">
+                    </div>
+                
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 4</div>
+                        <img src="media/seattle.jpeg" style="width:100%">
+                    </div>
+                
+                    <div class="mySlides">
+                        <div class="numbertext">4 / 4</div>
+                        <img src="media/taipei.jpeg" style="width:100%">
+                    </div>
+                
+                    <!-- Next/previous controls -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                
+                    <!-- Caption text -->
+                    <div class="caption-container">
+                        <p id="caption"></p>
+                    </div>
+                
+                    <!-- Thumbnail image controls -->
+                    <!-- <div class="thumb"> -->
+                    <div class="column">
+                        <img class="demo" src="media/sf.jpeg" onclick="currentSlide(1)" alt="SF">
+                    </div>
+                
+                    <div class="column">
+                        <img class="demo" src="media/bc.jpeg" onclick="currentSlide(2)" alt="BC">
+                    </div>
+                
+                    <div class="column">
+                        <img class="demo" src="media/seattle.jpeg" onclick="currentSlide(3)" alt="Seattle">
+                    </div>
+                
+                    <div class="column">
+                        <img class="demo" src="media/taipei.jpeg" onclick="currentSlide(4)" alt="Taipei">
+                    </div>
+                    <!-- </div> -->
                 </div>
             </div>
         </section>
@@ -71,6 +128,8 @@
                 <input type="submit" value="Submit">
             </form>
         </section>
+
+        <script src="./js/one.js"></script>
     </body>
     <footer>
         <p id="footer">www.skypandatravels.com &copy; 2020-2020</p>
